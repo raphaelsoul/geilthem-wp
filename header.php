@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?>>
   <head>
 	<?php wp_head(); // wp_head ?>
-
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" />
     <style>
     #view-source {

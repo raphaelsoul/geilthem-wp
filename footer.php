@@ -1,4 +1,4 @@
-        <footer class="mdl-mega-footer">
+        <footer class="mdl-mega-footer gc-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
               <input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
@@ -53,6 +53,5 @@
         </footer>
       </main>
     </div>
-    <a href="https://github.com/google/material-design-lite/blob/master/templates/text-only/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast">View Source</a>
   </body>
 </html>
