@@ -7,7 +7,7 @@
       <main class="gc-default mdl-layout__content">
           <?php if(have_posts());?>
           <?php while ( have_posts() ) : the_post();?>
-            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <section class="gc-card section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
               <div class="mdl-card__supporting-text">
                 <h4>
@@ -18,11 +18,12 @@
               <div class="mdl-card__actions">
                 <p>分类：<?php the_category(', '); ?></p>
                 <p>标签：<?php the_tags( '', ', ', '' ); ?></p>
+                <p>发表时间： <?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></p>
               </div>
             </div>
           </section>
-          <?php endwhile;?> 
-          
+          <?php endwhile; ?>
+          <?php get_search_form(); ?>
       <?php get_footer() ?>
       </main>
     </div>

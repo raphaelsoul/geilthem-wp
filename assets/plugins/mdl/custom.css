@@ -260,6 +260,10 @@ html, body {
   font-size: 13px;
 }
 
+.gc-card {
+  margin: 48px auto;
+}
+
 .gc-nav {
   margin: 0;
   padding:0;
