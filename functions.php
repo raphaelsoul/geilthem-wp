@@ -13,7 +13,20 @@ function intro_mdl() {
 		wp_enqueue_script('mdl-script');
 	}
 }
-add_action('init','intro_mdl');
+#add_action('init','intro_mdl');
+
+//引入web starter kit
+function intro_wsk() {
+	wp_register_style('wsk-style',get_template_directory_uri() . '/assets/plugins/wsk/main.css',false,false,false);
+	wp_register_script('wsk-script',get_template_directory_uri() . '/assets/plugins/wsk/main.js',false,false,false);
+	
+	//intro source at front end
+	if(!is_admin()) {
+		wp_enqueue_style('wsk-style');
+		wp_enqueue_script('wsk-script');
+	}
+}
+add_action('init','intro_wsk');
 
 function remove_admin_login_header() {
     remove_action('wp_head', '_admin_bar_bump_cb');

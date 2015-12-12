@@ -1,34 +1,41 @@
-<?php get_header() ?>
-  <body class="gc-default mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <?php get_header() ?>
 
-      <?php get_template_part('partials/navigation') ?>
+    <?php get_template_part('partials/navigation') ?>
 
-      <main class="gc-default mdl-layout__content">
-          <?php if(have_posts());?>
+    <main>
+      <div id="container" class="g-wide--3 g-medium--half">
+        <?php if(have_posts());?>
           <?php while ( have_posts() ) : the_post();?>
-            <section class="gc-card section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-              <div class="mdl-card__supporting-text">
-                <h4>
-                  <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
-                </h4>
-                <?php the_excerpt() ?><a href="<?php the_permalink(); ?>" class="mdl-button">Read our features</a>
-              </div>
-              <div class="mdl-card__actions">
-                <p>分类：<?php the_category(', '); ?></p>
-                <p>标签：<?php the_tags( '', ', ', '' ); ?></p>
-                <p>发表时间： <?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?></p>
-              </div>
-            </div>
+        <article>
+          <section><h1><a href="<?php the_permalink(); ?>"><?php the_title() ?></a></h1></section>
+          <section>
+            <?php the_excerpt() ?><a href="<?php the_permalink(); ?>">readmore</a>
           </section>
-          <?php endwhile; ?>
-          <?php get_search_form(); ?>
-      <?php get_footer() ?>
-      </main>
-    </div>
-
-  
-
+          <footer>
+            <div>
+              <p>分类：<?php the_category(', '); ?></p>
+                <p>标签：<?php the_tags( '', ', ', '' ); ?></p>
+                <p>发表时间： <?php the_time('F jS, Y') ?> by <?php the_author_posts_link() ?>
+            </div>
+          </footer>
+        </article>
+        <?php endwhile; ?>
+        <?php
+    the_posts_pagination( array(
+        'prev_text'          =>上页,
+        'next_text'          =>下页,
+        'before_page_number' => '<span class="meta-nav screen-reader-text">第 </span>',
+        'after_page_number' => '<span class="meta-nav screen-reader-text"> 页</span>',
+    ) );
+?>
+      </div>
+      <div id="sidebar" class="g-wide--1 g-miedium--half g-wide--last g--last">
+        <div>sidebar block1</div>
+        <div>sidebar block1</div>
+        <div>sidebar block1</div>
+        <div>sidebar block1</div>
+        <div>sidebar block1</div>
+      </div>
+    </main>
   </body>
 </html>
